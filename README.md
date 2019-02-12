@@ -96,6 +96,38 @@ function_list = {
 
 
 
+## data_scaled_attribute_div2
+#### Original Data Format
+FileName: `data_scaled_attribute_div2_p1.csv`
+FileName: `data_scaled_attribute_div2_multiple_columns_p1.csv` (two extra random columns)
+```python
+function_list = {
+    "idx": {"sql_type": "INTEGER", "function": lambda a: a},
+    "att1": {"sql_type": "INTEGER", "function": lambda a: a},
+    "random_string": {"sql_type": "TEXT", "function": generator_functions.random_string}, # random columns just in extended dataset
+    "random_int": {"sql_type": "INTEGER", "function": generator_functions.random_int} # random columns just in extended dataset
+}
+```
+#### New Data Format
+FileName: `data_scaled_attribute_div2_p2.csv`
+FileName: `data_scaled_attribute_div2_multiple_columns_p2.csv` (two extra random columns)
+```python
+entries = 10000
+function_list = {
+    "idx": {"sql_type": "INTEGER", "function": lambda a: a},
+    "att1": {"sql_type": "INTEGER", "function": lambda a: a / 2},
+    "random_string": {"sql_type": "TEXT", "function": generator_functions.random_string}, # random columns just in extended dataset
+    "random_int": {"sql_type": "INTEGER", "function": generator_functions.random_int} # random columns just in extended dataset
+    }
+```
+#### Tests
+| method	| passed | description |
+| ------------- | -------- | ----------- |
+| ML via DataWig | yes | outputs a shift of `1.0` in the normal and a shift of `0.97` extended version (without a tip which column might contain the shift) |
+| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+
+
+
 ## data_null_values
 #### Original Data Format
 FileName: `data_null_values_p1.csv`
@@ -220,7 +252,7 @@ def replace_func(a):
         return "'- " + str(generator_functions.random_string(a))[1:]
     else:
         return generator_functions.random_string(a)
-        
+
 function_list = {
     "idx": {"sql_type": "INTEGER", "function": lambda a: a},
     "att1": {"sql_type": "TEXT", "function": replace_func},
@@ -269,7 +301,7 @@ def func_p2(a):
         return "'- " + w[1:]
     else:
         return w[1:]
-        
+
 function_list = {
     "idx": {"sql_type": "INTEGER", "function": lambda a: a},
     "att1": {"sql_type": "TEXT", "function": func_p2},
