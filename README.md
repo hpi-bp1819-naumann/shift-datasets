@@ -1,5 +1,7 @@
 # Data Documentation
 
+We used `https://github.com/hpi-bp1819-naumann/data-generator` to generate the synthetic data in this repository.
+
 ## data_attribute_add_const_1
 #### Original Data Format
 FileName: `data_attribute_add_const_1_p1.csv`
