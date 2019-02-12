@@ -32,7 +32,7 @@ function_list = {
 | method	| passed | description |
 | ------------- | -------- | ----------- |
 | ML via DataWig | no | cannot detect this shift |
-| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
 
 
 
@@ -66,7 +66,7 @@ function_list = {
 | method	| passed | description |
 | ------------- | -------- | ----------- |
 | ML via DataWig | no | cannot detect this shift |
-| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
 
 
 
@@ -100,7 +100,7 @@ function_list = {
 | method	| passed | description |
 | ------------- | -------- | ----------- |
 | ML via DataWig | yes | outputs a shift of `0.9625` in the normal and a shift of `0.99` extended version (without a tip which column might contain the shift) |
-| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
 
 
 
@@ -132,7 +132,7 @@ function_list = {
 | method	| passed | description |
 | ------------- | -------- | ----------- |
 | ML via DataWig | yes | outputs a shift of `1.0` in the normal and a shift of `0.97` extended version (without a tip which column might contain the shift) |
-| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
 
 
 
@@ -172,7 +172,7 @@ function_list = {
 | method	| passed | description |
 | ------------- | -------- | ----------- |
 | ML via DataWig | partially yes | outputs a shift of `0.0425` in the normal and a shift of `0` extended version (without a tip which column might contain the shift) |
-| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
 
 
 
@@ -208,7 +208,7 @@ function_list = {
 | method	| passed | description |
 | ------------- | -------- | ----------- |
 | ML via DataWig | yes | outputs a shift of `1.0` in the normal and a shift of `0.985` in the extended version (without a tip which column might contain the shift) |
-| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
 
 
 ## data_text_with_bullet_points
@@ -240,7 +240,7 @@ function_list = {
 | method	| passed | description |
 | ------------- | -------- | ----------- |
 | ML via DataWig | yes | outputs a shift of `1.0` in both the normal and extended version (without a tip which column might contain the shift) |
-| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
 
 
 
@@ -280,7 +280,7 @@ function_list = {
 | method	| passed | description |
 | ------------- | -------- | ----------- |
 | ML via DataWig | partially yes | outputs a shift of `0.025` in the normal and a shift of `0.095` in the extended version (without a tip which column might contain the shift) |
-| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
 
 
 
@@ -331,4 +331,4 @@ function_list = {
 | method	| passed | description |
 | ------------- | -------- | ----------- |
 | ML via DataWig | no | cannot detect this shift |
-| name the tested method | yes/no | describe how good the shift can be detected shift and problems that may occur |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
