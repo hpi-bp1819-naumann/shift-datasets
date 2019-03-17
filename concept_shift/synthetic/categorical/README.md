@@ -12,7 +12,7 @@ FileName: `data_categorical_histogram_fail_p1_multiple_columns_p1.csv` (two extr
 categories = ["A", "B", "C", "D"]
 function_list = {
     "idx": {"sql_type": "INTEGER", "function": lambda a: a},
-    "att1": {"sql_type": "INTEGER", "function": lambda a: categories[a%4]},
+    "att1": {"sql_type": "TEXT", "function": lambda a: categories[a%4]},
     "random_string": {"sql_type": "TEXT", "function": generator_functions.random_string}, # random columns just in extended dataset
     "random_int": {"sql_type": "INTEGER", "function": generator_functions.random_int} # random columns just in extended dataset
 }
@@ -25,7 +25,40 @@ FileName: `data_text_with_bullet_points_multiple_columns_p2.csv` (two extra rand
 categories = ["A", "B", "C", "D"]
 function_list = {
     "idx": {"sql_type": "INTEGER", "function": lambda a: a},
-    "att1": {"sql_type": "INTEGER", "function": lambda a: categories[(a+1)%4]},
+    "att1": {"sql_type": "TEXT", "function": lambda a: categories[(a+1)%4]},
+    "random_string": {"sql_type": "TEXT", "function": generator_functions.random_string}, # random columns just in extended dataset
+    "random_int": {"sql_type": "INTEGER", "function": generator_functions.random_int} # random columns just in extended dataset
+}
+```
+#### Tests
+| method	| passed | description |
+| ------------- | -------- | ----------- |
+| name the tested method | yes/no | describe how good the shift can be detected and problems that may occur |
+
+
+## data_categorical_rectified_linear
+#### Original Data Format
+FileName: `data_categorical_linear_range_p1.csv`
+
+FileName: `data_categorical_linear_range_multiple_columns_p1.csv` (two extra random columns)
+```python
+categories = ["A", "B", "C", "D"]
+function_list = {
+    "idx": {"sql_type": "INTEGER", "function": lambda a: a},
+    "att1": {"sql_type": "TEXT", "function": lambda a: categories[int(a / (entries / len(categories)))]},
+    "random_string": {"sql_type": "TEXT", "function": generator_functions.random_string}, # random columns just in extended dataset
+    "random_int": {"sql_type": "INTEGER", "function": generator_functions.random_int} # random columns just in extended dataset
+}
+```
+#### New Data Format
+FileName: `data_categorical_linear_range_p2.csv`
+
+FileName: `data_categorical_linear_range_multiple_columns_p2.csv` (two extra random columns)
+```python
+categories = ["A", "B", "C", "D"]
+function_list = {
+    "idx": {"sql_type": "INTEGER", "function": lambda a: a},
+    "att1": {"sql_type": "TEXT", "function": lambda a: categories[(int(a / (entries / len(categories))) + 1) % 4]},
     "random_string": {"sql_type": "TEXT", "function": generator_functions.random_string}, # random columns just in extended dataset
     "random_int": {"sql_type": "INTEGER", "function": generator_functions.random_int} # random columns just in extended dataset
 }
